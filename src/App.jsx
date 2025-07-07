@@ -70,12 +70,12 @@ export default function Portfolio() {
             <Navbar activeSection={activeSection} />
             <Hero />
             <ScrollIndicator />
-            <About />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Contact />
-            <Footer />
+                <About />
+                <Skills />
+                <Experience />
+                <Projects />
+              <Contact />
+              <Footer />
           </motion.div>
         )}
       </AnimatePresence>
