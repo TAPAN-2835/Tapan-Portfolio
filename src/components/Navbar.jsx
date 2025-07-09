@@ -20,7 +20,9 @@ export default function Navbar({ activeSection }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const yOffset = -70 // Adjust this value to match your navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: "smooth" })
     }
     setIsMobileMenuOpen(false)
   }
