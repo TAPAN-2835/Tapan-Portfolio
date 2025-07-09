@@ -90,13 +90,13 @@ export default function Hero() {
         </motion.h1>
 
         <motion.div
-          className="text-2xl md:text-4xl lg:text-5xl font-light mb-8 h-16 flex items-center justify-center"
+          className="text-2xl md:text-4xl lg:text-5xl font-light mb-8 h-16 flex items-center justify-center whitespace-nowrap"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <span className="text-gray-300">I'm a </span>
-          <span className="ml-2 text-cyan-400 font-medium min-w-[300px] text-left">
+          <span className="ml-2 text-cyan-400 font-medium min-w-[180px] text-left whitespace-nowrap">
             {displayText}
             <motion.span
               className="inline-block w-1 h-8 bg-cyan-400 ml-1"

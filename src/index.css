@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: none !important;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   color: #ffffff;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: none !important;
 }
 
 /* Custom scrollbar */
@@ -247,4 +249,12 @@ textarea:focus-visible {
   .border-gray-700 {
     border-color: #ffffff;
   }
+}
+
+/* Restore default cursor for text inputs and clickable elements */
+input, textarea, [contenteditable="true"] {
+  cursor: text !important;
+}
+a, button {
+  cursor: pointer !important;
 }

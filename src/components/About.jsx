@@ -31,9 +31,9 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="w-96 h-96 mx-auto relative">
+              <div className="w-60 h-60 sm:w-80 sm:h-80 md:w-100 md:h-100 mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-xl opacity-30 animate-pulse" />
-                <div className="relative w-96 h-96 bg-gray-700 rounded-lg overflow-hidden border-4 border-cyan-400 shadow-2xl">
+                <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-gray-700 rounded-lg overflow-hidden border-4 border-cyan-400 shadow-2xl">
                   {/* Place your photo as 'profile.jpg' in the public folder */}
                   <img
                     src="/profile.jpg"
@@ -74,7 +74,7 @@ export default function About() {
               <motion.a
                 href="/resume.pdf"
                 download
-                className="px-6 py-3 rounded-full text-white font-semibold w-full h-full flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 border-2 border-transparent shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-cyan-500/25 relative overflow-hidden group"
+                className="px-4 py-3 rounded-full text-white font-semibold w-full h-full flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 border-2 border-transparent shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-cyan-500/25 relative overflow-hidden group text-center mt-2 md:mt-0 md:w-auto"
                 style={{ fontSize: '1rem' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
