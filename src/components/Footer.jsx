@@ -32,49 +32,64 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center space-y-8">
-          {/* Copyright */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Tapan Patel. All rights reserved.</p>
-          </motion.div>
-
-          {/* Follow Me Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-lg font-semibold text-white mb-4">Follow Me</h3>
-            <div className="flex justify-center items-center gap-6">
-              {socialLinks.map(({ icon: Icon, href, color, label }, index) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 ${color} transition-all duration-300 border border-gray-700 hover:border-current hover:shadow-lg`}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  aria-label={label}
-                >
-                  <Icon size={20} />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+    <footer className="bg-gray-900 border-t border-gray-800 pt-12 pb-6 mt-16">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6 mb-8">
+        {/* Brand/Logo & Tagline */}
+        <div className="flex flex-col items-start md:items-start gap-3">
+          <div className="flex items-center gap-2 mb-2">
+            {/* Replace with your logo if available */}
+            <span className="text-2xl font-bold text-cyan-400">Tapan Patel</span>
+          </div>
+          <p className="text-gray-400 text-sm max-w-xs">Building digital experiences with passion & precision.</p>
         </div>
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+          <ul className="space-y-2 text-gray-400 text-sm">
+            <li><a href="#home" className="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="#about" className="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="#projects" className="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="#contact" className="hover:text-cyan-400 transition">Contact</a></li>
+            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition">Resume</a></li>
+          </ul>
+        </div>
+        {/* Contact Info */}
+        <div>
+          <h4 className="text-white font-semibold mb-3">Contact</h4>
+          <ul className="space-y-2 text-gray-400 text-sm">
+            <li><a href="mailto:mrpatel2835@gmail.com" className="hover:text-cyan-400 transition">mrpatel2835@gmail.com</a></li>
+            <li>Ahmedabad, India</li>
+          </ul>
+        </div>
+        {/* Social Icons */}
+        <div>
+          <h4 className="text-white font-semibold mb-3">Follow</h4>
+          <div className="flex gap-4 items-center">
+            <a href="https://github.com/TAPAN-2835" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-gray-100 hover:bg-cyan-500 transition">
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/tapan-patel-b91241288/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-blue-400 hover:bg-blue-50/10 transition">
+              <Linkedin size={20} />
+            </a>
+            <a href="https://x.com/PatelTapan7032?t=te5oHww2W4Q5T2g9D2lTjg&s=09" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-black hover:bg-gray-100 transition">
+              <XIcon />
+            </a>
+            <a href="https://www.instagram.com/charming_tapan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-pink-400 hover:bg-pink-50/10 transition">
+              <Instagram size={20} />
+            </a>
+            <a href="mailto:mrpatel2835@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Tapan%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you%20regarding..." aria-label="Email" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-green-400 hover:bg-green-50/10 transition">
+              <Mail size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Divider */}
+      <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 text-gray-500 text-xs gap-2">
+        <span>© {new Date().getFullYear()} Tapan Patel. All rights reserved.</span>
+        <span>
+          <a href="/privacy" className="hover:text-cyan-400 transition">Privacy Policy</a> |
+          <a href="/terms" className="hover:text-cyan-400 transition ml-1">Terms</a>
+        </span>
       </div>
     </footer>
   )
