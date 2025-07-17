@@ -91,7 +91,7 @@ export default function Hero() {
         </div>
         <p
           ref={paraRef}
-          className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-white-400 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
           Crafting digital experiences with cutting-edge technology, from responsive frontends to scalable backends and intelligent AI solutions.
         </p>
