@@ -54,10 +54,10 @@ export default function About() {
           >
             <h3 className="text-3xl font-bold text-white mb-4">About Me</h3>
 
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base leading-relaxed">
               I am Tapan Patel, a 3rd year B.Tech student specializing in Information and Communication Technology at Pandit Deendayal Energy University. I am deeply interested in space technology, advanced web development, and AI-driven solutions. With a strong academic background and technical foundation in full-stack development, database systems, and programming languages such as C, Python, and Java, I am committed to delivering innovative and effective solutions. I am passionate about applying technology to solve real-world problems and continuously advancing my knowledge in emerging fields such as Artificial Intelligence, Machine Learning, and the VLSI domain.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base leading-relaxed">
               My journey is driven by curiosity and a desire to make a positive impact through technology. I thrive in collaborative environments and enjoy tackling complex challenges, whether it's building scalable web applications, exploring the frontiers of AI, or contributing to research in space technology. I am always eager to learn, grow, and contribute to projects that push the boundaries of innovation.
             </p>
 

@@ -79,114 +79,55 @@ function SkillCard({ skill, index }) {
     )
   }
 
+  // Icon grid card (no progress/percentage)
   return (
     <motion.div
       ref={cardRef}
-      className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-400/50 transition-all duration-300 overflow-hidden"
+      className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-400/50 transition-all duration-300 overflow-hidden flex flex-col items-center"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={isCardInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{
-        scale: 1.05,
-        y: -5,
-        boxShadow: "0 20px 40px rgba(6, 182, 212, 0.1)",
-      }}
+      whileHover={{ scale: 1.05, y: -5, boxShadow: "0 20px 40px rgba(6, 182, 212, 0.1)" }}
     >
       {/* Background Glow Effect */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl blur-xl"
         style={{ backgroundColor: skill.color }}
       />
-
-      {/* Content */}
-      <div className="relative z-10 text-center">
-        {/* Skill Icon/Initial */}
-        <div className="mb-4">
-          <div
-            className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-white font-bold text-xl border-2 transition-all duration-300 group-hover:scale-110"
-            style={{
-              backgroundColor: `${skill.color}20`,
-              borderColor: skill.color,
-              color: skill.color,
-            }}
-          >
-            {skillLogos[skill.name] ? (
-              <img src={skillLogos[skill.name]} alt={skill.name + ' logo'} className="w-10 h-10 object-contain" />
-            ) : (
-              skill.name.charAt(0)
-            )}
-          </div>
-        </div>
-
-        {/* Skill Name */}
-        <h3 className="text-white font-semibold text-lg mb-3 group-hover:text-cyan-400 transition-colors">
-          {skill.name}
-        </h3>
-
-        {/* Circular Progress */}
-        <div className="relative w-20 h-20 mx-auto mb-3">
-          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
-            {/* Background Circle */}
-            <circle
-              cx="40"
-              cy="40"
-              r="32"
-              stroke="currentColor"
-              strokeWidth="6"
-              fill="none"
-              className="text-gray-700"
-            />
-            {/* Progress Circle */}
-            <motion.circle
-              cx="40"
-              cy="40"
-              r="32"
-              stroke={skill.color}
-              strokeWidth="6"
-              fill="none"
-              strokeLinecap="round"
-              strokeDasharray={`${2 * Math.PI * 32}`}
-              initial={{ strokeDashoffset: 2 * Math.PI * 32 }}
-              animate={
-                isCardInView
-                  ? {
-                      strokeDashoffset: 2 * Math.PI * 32 * (1 - skill.level / 100),
-                    }
-                  : { strokeDashoffset: 2 * Math.PI * 32 }
-              }
-              transition={{ duration: 1.5, delay: index * 0.1 + 0.5, ease: "easeOut" }}
-              className="drop-shadow-lg"
-            />
-          </svg>
-
-          {/* Percentage Text */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.span
-              className="text-white font-bold text-sm"
-              initial={{ opacity: 0 }}
-              animate={isCardInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 + 1 }}
-            >
-              {skill.level}%
-            </motion.span>
-          </div>
-        </div>
-
-        {/* Category Badge */}
-        <div className="inline-block">
-          <span
-            className="px-3 py-1 text-xs font-medium rounded-full border transition-all duration-300"
-            style={{
-              backgroundColor: `${skill.color}10`,
-              borderColor: `${skill.color}40`,
-              color: skill.color,
-            }}
-          >
-            {skill.category}
-          </span>
+      {/* Icon */}
+      <div className="mb-4">
+        <div
+          className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-white font-bold text-xl border-2 transition-all duration-300 group-hover:scale-110"
+          style={{
+            backgroundColor: `${skill.color}20`,
+            borderColor: skill.color,
+            color: skill.color,
+          }}
+        >
+          {skillLogos[skill.name] ? (
+            <img src={skillLogos[skill.name]} alt={skill.name + ' logo'} className="w-10 h-10 object-contain" />
+          ) : (
+            skill.name.charAt(0)
+          )}
         </div>
       </div>
-
+      {/* Skill Name */}
+      <h3 className="text-white font-semibold text-lg mb-1 group-hover:text-cyan-400 transition-colors">
+        {skill.name}
+      </h3>
+      {/* Category Badge (optional, can remove if you want even cleaner) */}
+      <div className="inline-block mt-1">
+        <span
+          className="px-3 py-1 text-xs font-medium rounded-full border transition-all duration-300"
+          style={{
+            backgroundColor: `${skill.color}10`,
+            borderColor: `${skill.color}40`,
+            color: skill.color,
+          }}
+        >
+          {skill.category}
+        </span>
+      </div>
       {/* Hover Shine Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-5 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700" />
     </motion.div>
@@ -217,14 +158,26 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Skills Badges/Chips Grid */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {skills.filter(skill => !skill.isSoftSkills).map((skill, index) => (
-            <SkillCard key={skill.name} skill={skill} index={index} />
+            <span
+              key={skill.name}
+              className="inline-block px-6 py-3 rounded-full font-semibold text-lg shadow-md"
+              style={{
+                backgroundColor: skill.color + '22', // light background
+                color: skill.color,
+                border: `2px solid ${skill.color}55`,
+                fontSize: '1.35rem',
+                letterSpacing: '0.03em',
+              }}
+            >
+              {skill.name}
+            </span>
           ))}
         </div>
 
-        {/* Summary Stats */}
+        {/* Summary Stats and Soft Skills Card (unchanged) */}
         <motion.div
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
           initial={{ opacity: 0, y: 30 }}

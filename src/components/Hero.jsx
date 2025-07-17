@@ -1,45 +1,33 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Canvas } from "@react-three/fiber"
-import { Stars, Float } from "@react-three/drei"
-import './Hero.css'
+import ParticleSystem from "@/components/ParticleSystem"
 
 const roles = ["Frontend Developer", "Backend Developer", "AI/ML Explorer", "Full-Stack Engineer"]
-
-function AnimatedBackground() {
-  return (
-    <>
-      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-      <Float speed={1} rotationIntensity={1} floatIntensity={2}>
-        <mesh position={[-8, 4, -5]}>
-          <torusGeometry args={[2, 0.5, 16, 100]} />
-          <meshStandardMaterial color="#00ffff" wireframe />
-        </mesh>
-      </Float>
-      <Float speed={1.5} rotationIntensity={2} floatIntensity={1}>
-        <mesh position={[8, -2, -3]}>
-          <dodecahedronGeometry args={[1.5]} />
-          <meshStandardMaterial color="#ff00ff" wireframe />
-        </mesh>
-      </Float>
-      <Float speed={0.8} rotationIntensity={0.5} floatIntensity={3}>
-        <mesh position={[0, 6, -8]}>
-          <sphereGeometry args={[1, 32, 32]} />
-          <meshStandardMaterial color="#ffff00" wireframe />
-        </mesh>
-      </Float>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-    </>
-  )
-}
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0)
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  // Add missing refs
+  const headlineRef = useRef(null)
+  const subheadlineRef = useRef(null)
+  const ctaRef = useRef(null)
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMouse({
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: -(e.clientY / window.innerHeight) * 2 + 1,
+      })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
   useEffect(() => {
     const currentRoleText = roles[currentRole]
@@ -69,11 +57,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
+      {/* Particle System Background */}
       <div className="absolute inset-0">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <AnimatedBackground />
-        </Canvas>
+        <ParticleSystem mouse={mouse} />
       </div>
 
       {/* Content */}

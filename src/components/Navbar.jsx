@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import TPLogo from "./TPLogo"
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -39,8 +38,12 @@ export default function Navbar({ activeSection }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div className="relative group cursor-pointer" whileHover={{ scale: 1.05 }} onClick={() => scrollToSection('home')}>
-            <TPLogo width={48} height={48} />
+          <motion.div
+            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            onClick={() => scrollToSection('home')}
+          >
+            {"<Tapan/>"}
           </motion.div>
 
           {/* Desktop Navigation */}
