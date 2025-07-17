@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber"
 import { Points, PointMaterial } from "@react-three/drei"
 import * as random from "maath/random/dist/maath-random.esm"
 
-function Particles({ count = 5000 }) {
+function Particles({ count = 2500 }) {
   const ref = useRef()
   const [sphere] = useMemo(() => [random.inSphere(new Float32Array(count * 3), { radius: 1.5 })], [count])
 
