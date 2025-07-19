@@ -30,12 +30,22 @@ export default function Navbar({ activeSection }) {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-gray-800"
+      className={
+        `fixed top-0 left-0 right-0 z-40 ` +
+        'transition-all duration-500 ease-in-out ' +
+        (activeSection === 'home'
+          ? 'bg-transparent border-none shadow-none backdrop-blur-0'
+          : 'bg-gray-900/90 backdrop-blur-md border-b border-gray-800 shadow-lg')
+      }
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Subtle bottom gradient for separation only on home */}
+        {activeSection === 'home' && (
+          <div className="absolute left-0 right-0 bottom-0 h-4 pointer-events-none" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.12), transparent)'}} />
+        )}
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div

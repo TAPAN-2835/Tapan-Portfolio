@@ -63,15 +63,15 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Particle System Background */}
-      <div className="absolute inset-0">
-        <ParticleSystem mouse={mouse} />
+      {/* Background Image with overlay for readability */}
+      <div className="absolute inset-0 bg-cover bg-center sm:bg-center bg-[position:70%_20%] sm:bg-[position:center] bg-[length:180%_auto] sm:bg-[length:cover]" style={{ backgroundImage: 'url(/hero-bg.jpg)' }}>
+        <div className="absolute inset-0 bg-black/60" />
       </div>
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-2 sm:px-4 max-w-4xl mx-auto">
         <h1
           ref={headlineRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-[0_6px_32px_rgba(0,0,0,0.9)]"
+          className="text-5xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 drop-shadow-[0_6px_32px_rgba(0,0,0,0.9)]"
         >
           <span className="bg-gradient-to-r from-white via-cyan-300 via-blue-400 via-yellow-200 to-pink-300 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient-x">
             Tapan Patel
@@ -79,34 +79,34 @@ export default function Hero() {
         </h1>
         <div
           ref={subheadlineRef}
-          className="text-2xl md:text-4xl lg:text-5xl font-light mb-8 h-16 flex items-center justify-center whitespace-nowrap"
+          className="text-lg xs:text-xl sm:text-4xl md:text-4xl lg:text-5xl font-light mb-6 sm:mb-8 h-12 sm:h-16 flex items-center justify-center whitespace-nowrap"
         >
           <span className="text-gray-300">I'm a </span>
-          <span className="ml-2 text-cyan-400 font-medium min-w-[180px] text-left whitespace-nowrap">
+          <span className="ml-2 text-cyan-400 font-medium min-w-[120px] sm:min-w-[180px] text-left whitespace-nowrap">
             {displayText}
             <span
-              className="inline-block w-1 h-8 bg-cyan-400 ml-1 animate-pulse"
+              className="inline-block w-1.5 sm:w-2 h-6 sm:h-8 bg-cyan-400 ml-2 rounded-full animate-blink shadow-[0_0_8px_2px_rgba(34,211,238,0.5)]"
             />
           </span>
         </div>
         <p
           ref={paraRef}
-          className="text-lg md:text-xl text-white-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-white-400 mb-8 sm:mb-12 max-w-xl sm:max-w-2xl mx-auto leading-relaxed"
         >
           Crafting digital experiences with cutting-edge technology, from responsive frontends to scalable backends and intelligent AI solutions.
         </p>
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
         >
           <button
-            className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-semibold text-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-semibold text-base sm:text-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
             onClick={() => document.getElementById("projects").scrollIntoView({ behavior: "smooth" })}
           >
             View My Work
           </button>
           <button
-            className="px-8 py-4 border-2 border-cyan-400 rounded-full text-cyan-400 font-semibold text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-400 rounded-full text-cyan-400 font-semibold text-base sm:text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300"
             onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
           >
             Get In Touch

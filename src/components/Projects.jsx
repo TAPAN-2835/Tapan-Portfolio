@@ -81,7 +81,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-800/50" ref={ref}>
+    <section id="projects" className="py-20 px-4 bg-gray-900/80" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"

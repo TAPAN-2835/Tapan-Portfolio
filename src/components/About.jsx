@@ -19,7 +19,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="py-20 px-4 bg-gray-800/50" ref={ref}>
+    <section id="about" className="py-20 px-4 bg-gray-900/80" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 ref={headingRef} className="text-4xl md:text-5xl font-bold mb-4">

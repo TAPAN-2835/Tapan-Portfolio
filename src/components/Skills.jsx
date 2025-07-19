@@ -139,7 +139,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, threshold: 0.1 })
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gray-900" ref={ref}>
+    <section id="skills" className="py-20 px-4 bg-gray-900/80" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"

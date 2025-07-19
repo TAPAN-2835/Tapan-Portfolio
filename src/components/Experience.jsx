@@ -154,7 +154,7 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, threshold: 0.1 })
 
   return (
-    <section id="experience" className="py-20 px-4 bg-gray-800/30" ref={ref}>
+    <section id="experience" className="py-20 px-4 bg-gray-900/80" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
