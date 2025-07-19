@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
@@ -15,6 +15,15 @@ const navItems = [
 
 export default function Navbar({ activeSection }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -33,7 +42,7 @@ export default function Navbar({ activeSection }) {
       className={
         `fixed top-0 left-0 right-0 z-40 ` +
         'transition-all duration-500 ease-in-out ' +
-        (activeSection === 'home'
+        (activeSection === 'home' && !scrolled
           ? 'bg-transparent border-none shadow-none backdrop-blur-0'
           : 'bg-gray-900/90 backdrop-blur-md border-b border-gray-800 shadow-lg')
       }
@@ -105,7 +114,7 @@ export default function Navbar({ activeSection }) {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800/50 backdrop-blur-md rounded-lg mt-2">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 rounded-lg mt-2">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.id}
