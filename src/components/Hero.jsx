@@ -65,7 +65,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with overlay for readability */}
       <div className="absolute inset-0 bg-cover bg-center sm:bg-center bg-[position:80%_60%] sm:bg-[position:center] bg-[length:220%_auto] sm:bg-[length:cover]" style={{ backgroundImage: 'url(/hero-bg.jpg)' }}>
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       {/* Content */}
       <div className="relative z-10 text-center px-2 sm:px-4 max-w-4xl mx-auto">
