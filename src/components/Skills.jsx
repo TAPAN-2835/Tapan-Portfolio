@@ -12,7 +12,11 @@ const skills = [
   { name: "Express.js", level: 69, color: "#000000", category: "Backend" },
   { name: "JavaScript", level: 75, color: "#F7DF1E", category: "Frontend" },
   { name: "MongoDB", level: 70, color: "#47A248", category: "Database" },
+<<<<<<< HEAD
   { name: "Python", level: 73, color: "#3776AB", category: "AI/ML"},
+=======
+  { name: "Python", level: 73, color: "#3776AB", category: "AI/ML" },
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   { name: "Java", level: 71, color: "#007396", category: "Programming Language" },
   { name: "Power BI", level: 65, color: "#F2C811", category: "Data" },
   { name: "DSA", level: 55, color: "#8B5CF6", category: "Competitive Programming" },
@@ -160,6 +164,7 @@ export default function Skills() {
 
         {/* Skills Badges/Chips Grid */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
+<<<<<<< HEAD
           {skills.filter(skill => !skill.isSoftSkills).map((skill, index) => (
             <span
               key={skill.name}
@@ -175,6 +180,26 @@ export default function Skills() {
               {skill.name}
             </span>
           ))}
+=======
+          {skills.filter(skill => !skill.isSoftSkills).map((skill, index) => {
+            const isExpress = skill.name === "Express.js";
+            return (
+              <span
+                key={skill.name}
+                className="inline-block px-6 py-3 rounded-full font-semibold text-lg shadow-md"
+                style={{
+                  backgroundColor: isExpress ? 'rgba(255, 255, 255, 0.1)' : skill.color + '22',
+                  color: isExpress ? '#ffffff' : skill.color,
+                  border: `2px solid ${isExpress ? '#ffffff' : skill.color + '55'}`,
+                  fontSize: '1.35rem',
+                  letterSpacing: '0.03em',
+                }}
+              >
+                {skill.name}
+              </span>
+            );
+          })}
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
         </div>
 
         {/* Summary Stats and Soft Skills Card (unchanged) */}
@@ -188,7 +213,11 @@ export default function Skills() {
             <div className="text-6xl font-extrabold text-cyan-400 mb-2">1.5+</div>
             <div className="text-2xl text-gray-300 font-semibold">Years Experience</div>
           </div>
+<<<<<<< HEAD
           <SkillCard skill={skills.find(skill => skill.isSoftSkills)} index={skills.length-1} />
+=======
+          <SkillCard skill={skills.find(skill => skill.isSoftSkills)} index={skills.length - 1} />
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
           <div className="flex flex-col items-center justify-center h-full">
             <div className="text-6xl font-extrabold text-purple-400 mb-2">10+</div>
             <div className="text-2xl text-gray-300 font-semibold">Technologies</div>

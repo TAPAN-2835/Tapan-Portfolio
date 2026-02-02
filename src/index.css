@@ -94,6 +94,10 @@ textarea:focus-visible {
     opacity: 0;
     transform: translateY(-10px);
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   to {
     opacity: 1;
     transform: translateY(0);
@@ -105,6 +109,10 @@ textarea:focus-visible {
     opacity: 1;
     transform: translateY(0);
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   to {
     opacity: 0;
     transform: translateY(-10px);
@@ -167,6 +175,10 @@ textarea:focus-visible {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   100% {
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0;
@@ -201,9 +213,17 @@ textarea:focus-visible {
   0% {
     background-position: 0% 50%;
   }
+<<<<<<< HEAD
   50% {
     background-position: 100% 50%;
   }
+=======
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   100% {
     background-position: 0% 50%;
   }
@@ -220,6 +240,10 @@ textarea:focus-visible {
   0% {
     background-position: -200% 0;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   100% {
     background-position: 200% 0;
   }
@@ -227,6 +251,10 @@ textarea:focus-visible {
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
   *,
   *::before,
   *::after {
@@ -252,9 +280,22 @@ textarea:focus-visible {
 }
 
 /* Restore default cursor for text inputs and clickable elements */
+<<<<<<< HEAD
 input, textarea, [contenteditable="true"] {
   cursor: text !important;
 }
 a, button {
   cursor: pointer !important;
 }
+=======
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+}
+
+a,
+button {
+  cursor: pointer !important;
+}
+>>>>>>> 43a7a6b (Initial commit: Portfolio UI/UX improvements and architectural refinements)
