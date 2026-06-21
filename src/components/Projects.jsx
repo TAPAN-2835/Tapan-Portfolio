@@ -10,7 +10,7 @@ const projects = [
     id: 11,
     title: "Invoxa - AI-Powered Invoice Management Platform",
     description: "AI-powered invoice management platform featuring smart invoice creation, analytics dashboards, customer management, PDF export, payment tracking, QR invoices, and a polished SaaS experience.",
-    image: "/invoxa.png",
+    image: "/projects/invoxa.png",
     technologies: ["React", "TypeScript", "Tailwind CSS", "TanStack Router", "React Query", "Radix UI"],
     category: "SaaS",
     tags: ["Frontend", "SaaS"],
