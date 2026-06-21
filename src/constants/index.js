@@ -83,6 +83,21 @@ export const EXPERIENCE_DATA = [
 
 export const PROJECTS_DATA = [
     {
+        id: 11,
+        title: "Invoxa - AI-Powered Invoice Management Platform",
+        description: "AI-powered invoice management platform featuring smart invoice creation, analytics dashboards, customer management, PDF export, payment tracking, QR invoices, and a polished SaaS experience.",
+        image: "/invoxa.png",
+        technologies: ["React", "TypeScript", "Tailwind", "TanStack Router", "React Query", "Framer Motion"],
+        category: "SaaS",
+        tags: ["Frontend", "SaaS"],
+        status: "Completed",
+        github: "https://github.com/TAPAN-2835/InvoiceFlow",
+        live: "https://invoice-flow-phi-henna.vercel.app/",
+        problemStatement: "Providing an intuitive workflow for creating professional invoices, managing customers, tracking payments, and organizing financial records.",
+        keyFeatures: ["AI-inspired invoice creation", "Dashboard Analytics", "PDF Export & QR Invoices", "Customer & Payment Tracking"],
+        details: "Invoxa is a full-stack inspired SaaS invoice management platform designed for freelancers, startups, and businesses. It provides an intuitive workflow for creating professional invoices, managing customers, tracking payments, generating PDF invoices, viewing business analytics, and organizing financial records. Built with React, TypeScript, Tailwind CSS, TanStack Router, React Query, Radix UI, and Framer Motion, the application emphasizes clean architecture, modern UI, responsiveness, and scalable frontend engineering.",
+    },
+    {
         id: 1,
         title: "Converse - Real-time Chat Application",
         description: "A full-stack real-time chat application with user authentication, group and private messaging, and a modern UI.",
